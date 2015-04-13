@@ -84,6 +84,7 @@ var Game = function(str){
       console.log(this.game_array);
     }
 
+// fix
     else if (direction == "right"){
       for (var row = 0; row < 4; row++) {
         this.game_array[row].reverse();
@@ -95,8 +96,22 @@ var Game = function(str){
     }
 
     else if (direction == "up"){
+      // add spawnBlock here
+          function transpose(a) {
+      return a[0].map(function (_, c) { return a.map(function (r) { return r[c]; }); });
+};
 
+console.log(transpose(this.game_array))
+
+
+
+      // console.log(_.zip.apply(this.game_array));
+      // Game.prototype.shift;
+      // Game.prototype.merge;
+      // console.log(this.game_array);
     }
+
+
     // else if (direction == "down"){
 
     // };
@@ -110,12 +125,12 @@ game1 = new Game('0402004002022022');
 game1.createBoard();
 // console.log(game1.game_array);
 // game1.to_s();
-game1.shift();
-game1.merge();
+// game1.shift();
+// game1.merge();
 console.log("With move:")
-game1.move("left");
+// game1.move("left");
 // game1.move("right");
-
+game1.move("up");
 
 
 
