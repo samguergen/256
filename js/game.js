@@ -27,44 +27,55 @@ var Game = function(str){
     console.log(this.game_array);
   };
 
+
+
   Game.prototype.to_s = function(){
     var flat_arr = [].concat.apply([],this.game_array);
     console.log(flat_arr.join(''));
   };
 
-  Game.prototype.shiftDouble = function(){
+
+
+
+  Game.prototype.shift = function(){
       for (var row = 0; row < 4; row++) {
         // console.log(this.game_array[row]);
         if ((this.game_array[row]).indexOf(0) != -1) {
           squashed = _.reject((this.game_array[row]), function(num){ return (num == 0); });
            for (var x = 1; x < (this.game_array[row].length); x++){
             if (squashed.length == 4){
-              break };
+              break
+                };
             (squashed).push(0);
+              };
+          this.game_array[row] = squashed;
           };
         };
-          // console.log(squashed);
+          console.log(this.game_array);
+     };
 
-          for (var col = 0; col < 4; col++) {
-            if (squashed[col] == squashed[col-1]){
-              squashed[col-1] = (squashed[col] * squashed[col-1]);
-              if (col < 3){
-                squashed[col] = squashed[col+1];}
-              else {
-                squashed[col] = 0;}
-            };
-          };
-            // console.log(squashed);
-            this.game_array[row] = squashed;
-      };
-      console.log(this.game_array);
-  };
+  // Game.prototype.double = function(){
+  //   for (var row = 0; row < 4; row++) {
+  //     for (var col = 0; col < 4; col++) {
+  //           if (squashed[col] == squashed[col-1]){
+  //             squashed[col-1] = (squashed[col] * squashed[col-1]);
+  //             if (col < 3){
+  //               squashed[col] = squashed[col+1];}
+  //             else {
+  //               squashed[col] = 0;}
+  //           };
+  //         };
+  //           // console.log(squashed);
+  //           this.game_array[row] = squashed;
+  //     };
+  //     console.log(this.game_array);
 
 
-  Game.prototype.spawnBlock = function(){
+
+  // Game.prototype.spawnBlock = function(){
 
 
-  }
+  // }
 
 
 
@@ -75,7 +86,7 @@ game1 = new Game('0402004002022022');
 game1.createBoard();
 // console.log(game1.game_array);
 // game1.to_s();
-game1.shiftDouble();
+game1.shift();
 
 
 
