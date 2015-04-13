@@ -1,4 +1,5 @@
-// require 'underscore';
+var require = require || function() { };
+var _ = _ || require('./underscore.js');
 
 // -create a 2D array from given string *done*
 // - add to to_s method to convert 2D array back to string
@@ -47,21 +48,24 @@ var board = function(str){
     // };
 
       for (var row = 0; row < 4; row++) {
-        console.log(this.game_array[row]);
+        // console.log(this.game_array[row]);
         if ((this.game_array[row]).indexOf(0) != -1) {
-          // console.log("hello"); };
-          // console.log((this.game_array).filter(!0));}
-          squashed = _.reject((this.game_array), function(num){ return (num > 0); });
+          squashed = _.reject((this.game_array[row]), function(num){ return (num == 0); });
+          x = 0;
+          while (x < 3) {
+            (squashed).push(0);
+            x++ }
         };
+          console.log(squashed);
       };
 
   };
 };
 
-game1 = new board('0002000000000000');
+game1 = new board('0002004002020002');
 game1.createBoard();
 // console.log(game1.game_array);
-game1.to_s();
+// game1.to_s();
 game1.moveLeft();
 
 
