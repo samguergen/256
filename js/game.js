@@ -30,9 +30,36 @@ var board = function(str){
     var flat_arr = [].concat.apply([],this.game_array);
     console.log(flat_arr.join(''));
   };
+
+  this.moveLeft = function(){
+    // for (var row = 0; row < 4; row++) {
+    //   col = 1
+    //   while (col < 4) {
+    //     var currentSqr = this.game_array[row][col];
+    //     var checkSqr = this.game_array[row][col-1];
+    //     var idx = 0;
+    //     if this.game_array[row][col-1] == 0 {
+    //       checkSqr = this.game_array[row][col-1];
+    //       idx++;
+    //     };
+    //     col++
+    //   };
+    // };
+
+      for (var row = 0; row < 4; row++) {
+        console.log(this.game_array[row]);
+        if ((this.game_array[row]).indexOf(0) != -1) {
+          // console.log("hello"); };
+          console.log((this.game_array).filter(!0));}
+        };
+  };
 };
 
 game1 = new board('0002000000000000');
 game1.createBoard();
 // console.log(game1.game_array);
 game1.to_s();
+game1.moveLeft();
+
+
+
