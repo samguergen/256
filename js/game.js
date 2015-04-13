@@ -32,7 +32,7 @@ var Game = function(str){
     console.log(flat_arr.join(''));
   };
 
-  Game.prototype.shift = function(){
+  Game.prototype.shiftdouble = function(){
       for (var row = 0; row < 4; row++) {
         // console.log(this.game_array[row]);
         if ((this.game_array[row]).indexOf(0) != -1) {
@@ -43,26 +43,39 @@ var Game = function(str){
             (squashed).push(0);
           };
         };
-          console.log(squashed);
-          // for (var col = 0; col < 4; col++) {
-          //   if (squashed[col] == squashed[col-1]){
-          //     squashed[col-1] = (squashed[col] * squashed[col-1])
-          //   };
-          //   // console.log(squashed);
-          // };
+          // console.log(squashed);
+
+          for (var col = 0; col < 4; col++) {
+            // console.log(squashed[col]);
+            if (squashed[col] == squashed[col-1]){
+              squashed[col-1] = (squashed[col] * squashed[col-1]);
+              squashed[col] = 0;
+            };
+          };
+            console.log(squashed);
       };
-
-
   };
+
+  // Game.prototype.double = function(){
+  //   for (var row = 0; row < 4; row++) {
+  //     // console.log(squashed);
+  //     for (var col = 0; col < 4; col++) {
+  //     }
+  //   }
+  // }
+
+
+
 
 
 };
 
-game1 = new Game('0002004002020002');
+game1 = new Game('0402004002022022');
 game1.createBoard();
 // console.log(game1.game_array);
 // game1.to_s();
-game1.shift();
+game1.shiftdouble();
+
 
 
 
