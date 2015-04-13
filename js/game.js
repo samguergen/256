@@ -76,6 +76,32 @@ var Game = function(str){
   // }
 
 
+  Game.prototype.move = function(direction){
+    if (direction == "left"){
+      // add spawnBlock here
+      Game.prototype.shift;
+      Game.prototype.merge;
+      console.log(this.game_array);
+    }
+
+    else if (direction == "right"){
+      for (var row = 0; row < 4; row++) {
+        this.game_array[row].reverse();
+        };
+      Game.prototype.shift;
+      Game.prototype.merge;
+      console.log(this.game_array);
+
+    }
+
+    else if (direction == "up"){
+
+    }
+    // else if (direction == "down"){
+
+    // };
+
+  };
 
 
 };
@@ -86,6 +112,9 @@ game1.createBoard();
 // game1.to_s();
 game1.shift();
 game1.merge();
+console.log("With move:")
+game1.move("left");
+// game1.move("right");
 
 
 
