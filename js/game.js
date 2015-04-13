@@ -54,21 +54,19 @@ var Game = function(str){
           console.log(this.game_array);
      };
 
-  // Game.prototype.double = function(){
-  //   for (var row = 0; row < 4; row++) {
-  //     for (var col = 0; col < 4; col++) {
-  //           if (squashed[col] == squashed[col-1]){
-  //             squashed[col-1] = (squashed[col] * squashed[col-1]);
-  //             if (col < 3){
-  //               squashed[col] = squashed[col+1];}
-  //             else {
-  //               squashed[col] = 0;}
-  //           };
-  //         };
-  //           // console.log(squashed);
-  //           this.game_array[row] = squashed;
-  //     };
-  //     console.log(this.game_array);
+
+  Game.prototype.merge = function(){
+    for (var row = 0; row < 4; row++) {
+      for (var col = 0; col < 4; col++) {
+            if (this.game_array[row][col] == this.game_array[row][col-1]){
+              this.game_array[row][col-1] = (this.game_array[row][col] * this.game_array[row][col-1]);
+              Game.prototype.shift;
+            };
+          };
+        };
+          console.log(this.game_array);
+      };
+
 
 
 
@@ -87,6 +85,7 @@ game1.createBoard();
 // console.log(game1.game_array);
 // game1.to_s();
 game1.shift();
+game1.merge();
 
 
 
