@@ -32,14 +32,14 @@ var Game = function(str){
     console.log(flat_arr.join(''));
   };
 
-  Game.prototype.moveLeft = function(){
+  Game.prototype.shift = function(){
       for (var row = 0; row < 4; row++) {
         // console.log(this.game_array[row]);
         if ((this.game_array[row]).indexOf(0) != -1) {
           squashed = _.reject((this.game_array[row]), function(num){ return (num == 0); });
            for (var x = 1; x < (this.game_array[row].length); x++){
-            if (squashed.length == 4)
-              break
+            if (squashed.length == 4){
+              break };
             (squashed).push(0);
           };
         };
@@ -62,7 +62,7 @@ game1 = new Game('0002004002020002');
 game1.createBoard();
 // console.log(game1.game_array);
 // game1.to_s();
-game1.moveLeft();
+game1.shift();
 
 
 
