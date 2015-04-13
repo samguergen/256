@@ -1,4 +1,4 @@
-// require 'underscore.js'
+// require 'underscore';
 
 // -create a 2D array from given string *done*
 // - add to to_s method to convert 2D array back to string
@@ -50,8 +50,11 @@ var board = function(str){
         console.log(this.game_array[row]);
         if ((this.game_array[row]).indexOf(0) != -1) {
           // console.log("hello"); };
-          console.log((this.game_array).filter(!0));}
+          // console.log((this.game_array).filter(!0));}
+          squashed = _.reject((this.game_array), function(num){ return (num > 0); });
         };
+      };
+
   };
 };
 
