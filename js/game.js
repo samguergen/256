@@ -12,9 +12,9 @@ var _ = _ || require('./underscore.js');
 // -generate a 2 (or 4) in one of the empty cells for every key move
 
 
-var board = function(str){
+var Game = function(str){
   this.strg = str;
-  this.createBoard = function(){
+  Game.prototype.createBoard = function(){
     var numbers = this.strg.split('');
     this.game_array = [];
     for (var row = 0; row < 4; row++) {
@@ -27,42 +27,38 @@ var board = function(str){
     console.log(this.game_array);
   };
 
-  this.to_s = function(){
+  Game.prototype.to_s = function(){
     var flat_arr = [].concat.apply([],this.game_array);
     console.log(flat_arr.join(''));
   };
 
-  this.moveLeft = function(){
-    // for (var row = 0; row < 4; row++) {
-    //   col = 1
-    //   while (col < 4) {
-    //     var currentSqr = this.game_array[row][col];
-    //     var checkSqr = this.game_array[row][col-1];
-    //     var idx = 0;
-    //     if this.game_array[row][col-1] == 0 {
-    //       checkSqr = this.game_array[row][col-1];
-    //       idx++;
-    //     };
-    //     col++
-    //   };
-    // };
-
+  Game.prototype.moveLeft = function(){
       for (var row = 0; row < 4; row++) {
         // console.log(this.game_array[row]);
         if ((this.game_array[row]).indexOf(0) != -1) {
           squashed = _.reject((this.game_array[row]), function(num){ return (num == 0); });
-          x = 0;
-          while (x < 3) {
+           for (var x = 1; x < (this.game_array[row].length); x++){
+            if (squashed.length == 4)
+              break
             (squashed).push(0);
-            x++ }
+          };
         };
           console.log(squashed);
+          // for (var col = 0; col < 4; col++) {
+          //   if (squashed[col] == squashed[col-1]){
+          //     squashed[col-1] = (squashed[col] * squashed[col-1])
+          //   };
+          //   // console.log(squashed);
+          // };
       };
 
+
   };
+
+
 };
 
-game1 = new board('0002004002020002');
+game1 = new Game('0002004002020002');
 game1.createBoard();
 // console.log(game1.game_array);
 // game1.to_s();
