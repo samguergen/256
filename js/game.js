@@ -83,21 +83,20 @@ var Game = function(str){
       };
 
 
-
-
   // Game.prototype.spawnBlock = function(){
 
 
   // }
 
 
-//   Game.prototype.move = function(direction){
-//     if (direction == "left"){
-//       // add spawnBlock here
-//       Game.prototype.shift;
-//       Game.prototype.merge;
-//       console.log(this.game_array);
-//     }
+  Game.prototype.move = function(direction){
+    if (direction == "left"){
+      // add spawnBlock here
+      this.shift();
+      this.merge();
+    };
+  };
+};
 
 // // fix
 //     else if (direction == "right"){
@@ -125,19 +124,16 @@ var Game = function(str){
 
     // };
 
-  };
-
-
 
 
 game1 = new Game('0402004002022022');
 game1.createBoard();
 // console.log(game1.game_array);
 // game1.to_s();
-game1.shift();
-game1.merge();
+// game1.shift();
+// game1.merge();
 // console.log("With move:")
-// game1.move("left");
+game1.move("left");
 // game1.move("right");
 // game1.move("up");
 
