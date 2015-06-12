@@ -63,6 +63,19 @@ var Game = function(str){
               this.game_array[row][col] = (this.game_array[row][col] * this.game_array[row][col-1]);
               this.game_array[row][col-1] = 0;
 
+            //refactor into variable as this is mostly the shift function.
+            if ((this.game_array[row]).indexOf(0) != -1) {
+            squashed = _.reject((this.game_array[row]), function(num){ return (num == 0); });
+             for (var x = 1; x < (this.game_array[row].length); x++){
+              if (squashed.length == 4){
+                break
+                  };
+              (squashed).push(0);
+                };
+            this.game_array[row] = squashed;
+            };
+
+
             };
           };
         };
