@@ -39,7 +39,7 @@ var Game = function(str){
 
   Game.prototype.shift = function(){
       for (var row = 0; row < 4; row++) {
-        // console.log(this.game_array[row]);
+
         if ((this.game_array[row]).indexOf(0) != -1) {
           squashed = _.reject((this.game_array[row]), function(num){ return (num == 0); });
            for (var x = 1; x < (this.game_array[row].length); x++){
@@ -94,21 +94,24 @@ var Game = function(str){
       // add spawnBlock here
       this.shift();
       this.merge();
-    };
+    }
+
+// fix
+    else if (direction == "right"){
+      for (var row = 0; row < 4; row++) {
+        this.game_array[row].reverse();
+        };
+      this.shift();
+      this.merge();
+
+      for (var row = 0; row < 4; row++) {
+        this.game_array[row].reverse();
+      };
+      console.log(this.game_array);
+
+    }
   };
 };
-
-// // fix
-//     else if (direction == "right"){
-//       for (var row = 0; row < 4; row++) {
-//         this.game_array[row].reverse();
-//         };
-//       Game.prototype.shift;
-//       Game.prototype.merge;
-//       console.log(this.game_array);
-
-//     }
-
 //     else if (direction == "up"){
 //       // add spawnBlock here
 //           function transpose(a) {
@@ -133,8 +136,8 @@ game1.createBoard();
 // game1.shift();
 // game1.merge();
 // console.log("With move:")
-game1.move("left");
-// game1.move("right");
+// game1.move("left");
+game1.move("right");
 // game1.move("up");
 
 
