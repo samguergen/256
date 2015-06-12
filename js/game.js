@@ -34,7 +34,11 @@ var Game = function(str){
     console.log(flat_arr.join(''));
   };
 
-
+  Game.prototype.matrix = function(){
+    for (var row=0; row < 4; row++) {
+      console.log(this.game_array[row]);
+    }
+  };
 
 
   Game.prototype.shift = function(){
@@ -96,11 +100,12 @@ var Game = function(str){
       this.merge();
     }
 
-// fix
+
     else if (direction == "right"){
       for (var row = 0; row < 4; row++) {
         this.game_array[row].reverse();
         };
+      //remove console log from these
       this.shift();
       this.merge();
 
@@ -131,6 +136,7 @@ var Game = function(str){
 
 game1 = new Game('0402004002022022');
 game1.createBoard();
+game1.matrix();
 // console.log(game1.game_array);
 // game1.to_s();
 // game1.shift();
@@ -139,6 +145,7 @@ game1.createBoard();
 // game1.move("left");
 game1.move("right");
 // game1.move("up");
+game1.matrix();
 
 
 
