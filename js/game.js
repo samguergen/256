@@ -59,8 +59,10 @@ var Game = function(str){
     for (var row = 0; row < 4; row++) {
       for (var col = 0; col < 4; col++) {
             if (this.game_array[row][col] == this.game_array[row][col-1]){
-              this.game_array[row][col-1] = (this.game_array[row][col] * this.game_array[row][col-1]);
-              Game.prototype.shift;
+
+              this.game_array[row][col] = (this.game_array[row][col] * this.game_array[row][col-1]);
+              this.game_array[row][col-1] = 0;
+
             };
           };
         };
