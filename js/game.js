@@ -12,6 +12,18 @@ var _ = _ || require('./underscore.js');
 // -generate a 2 (or 4) in one of the empty cells for every key move
 
 
+function transpose(arr,arrLen) {
+  for (var i = 0; i < arrLen; i++) {
+    for (var j = 0; j <i; j++) {
+      //swap element[i,j] and element[j,i]
+      var temp = arr[i][j];
+      arr[i][j] = arr[j][i];
+      arr[j][i] = temp;
+    }
+  }
+};
+
+
 var Game = function(str){
   this.strg = str;
   Game.prototype.createBoard = function(){
@@ -115,17 +127,17 @@ var Game = function(str){
       console.log(this.game_array);
 
     }
+
+    else if (direction == "up"){
+      transpose(this.game_array, 3);
+
+    }
+
+    }
+
   };
-};
-//     else if (direction == "up"){
-//       // add spawnBlock here
-//           function transpose(a) {
-//       return a[0].map(function (_, c) { return a.map(function (r) { return r[c]; }); });
-// };
 
-// console.log(transpose(this.game_array))
 
-//     }
 
 
     // else if (direction == "down"){
@@ -141,10 +153,10 @@ game1.matrix();
 // game1.to_s();
 // game1.shift();
 // game1.merge();
-// console.log("With move:")
+console.log("With move:")
 // game1.move("left");
-game1.move("right");
-// game1.move("up");
+// game1.move("right");
+game1.move("up");
 game1.matrix();
 
 
