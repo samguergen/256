@@ -172,7 +172,9 @@ game1.matrix();
 console.log("With move:")
 // game1.move("left");
 // game1.move("right");
-game1.move("up");
+// game1.move("up");
+// game1.matrix();
+game1.move("down");
 game1.matrix();
 
 
