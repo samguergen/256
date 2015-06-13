@@ -133,8 +133,20 @@ var Game = function(str){
       this.shift();
       this.merge();
       transpose(this.game_array, 4);
-      // console.log(this.game_array);
+    }
 
+    else if (direction == "down"){
+      transpose(this.game_array, 4);
+      for (var row = 0; row < 4; row++) {
+        this.game_array[row].reverse();
+        };
+      this.shift();
+      this.merge();
+
+      for (var row = 0; row < 4; row++) {
+        this.game_array[row].reverse();
+      };
+      transpose(this.game_array, 4);
     }
 
     }
