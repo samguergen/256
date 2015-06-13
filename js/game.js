@@ -129,10 +129,10 @@ var Game = function(str){
     }
 
     else if (direction == "up"){
-      transpose(this.game_array, 3);
+      transpose(this.game_array, 4);
       this.shift();
       this.merge();
-      transpose(this.game_array, 3);
+      transpose(this.game_array, 4);
       // console.log(this.game_array);
 
     }
