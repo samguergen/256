@@ -99,6 +99,17 @@ var Game = function(str){
       };
 
 
+// to replace NaN with 0
+  // for (var row = 0; row < 4; row++) {
+  //     for (var col = 0; col < 4; col++) {
+  //         if (isNaN(this.game_array[col])){
+  //           this.game_array[col] = 0
+  //         };
+  //       };
+  //     };
+
+
+
   // Game.prototype.spawnBlock = function(){
 
 
@@ -171,7 +182,7 @@ game1.matrix();
 // game1.merge();
 console.log("With move:")
 // game1.move("left");
-// game1.move("right");
+game1.move("right");
 // game1.move("up");
 // game1.matrix();
 game1.move("down");
