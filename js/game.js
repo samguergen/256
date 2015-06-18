@@ -67,7 +67,7 @@ var Game = function(str){
           this.game_array[row] = squashed;
           };
         };
-          console.log(this.game_array);
+          // console.log(this.game_array);
      };
 
 
@@ -90,12 +90,10 @@ var Game = function(str){
                 };
             this.game_array[row] = squashed;
             };
-
-
             };
           };
         };
-          console.log(this.game_array);
+          // console.log(this.game_array);
       };
 
 
@@ -114,6 +112,17 @@ var Game = function(str){
 
 
   // }
+
+  Game.prototype.testNaN = function(){
+    for (var row = 0; row < 4; row++) {
+        for (var col = 0; col < 4; col++) {
+            if (isNaN(this.game_array[col])){
+              this.game_array[col] = 0
+            };
+          };
+        };
+
+  };
 
 
   Game.prototype.move = function(direction){
@@ -135,7 +144,7 @@ var Game = function(str){
       for (var row = 0; row < 4; row++) {
         this.game_array[row].reverse();
       };
-      console.log(this.game_array);
+      // console.log(this.game_array);
 
     }
 
@@ -172,7 +181,7 @@ var Game = function(str){
     // };
 
 
-
+console.log("New game:")
 game1 = new Game('0402004002022022');
 game1.createBoard();
 game1.matrix();
@@ -183,8 +192,10 @@ game1.matrix();
 console.log("With move:")
 // game1.move("left");
 game1.move("right");
+game1.matrix();
 // game1.move("up");
 // game1.matrix();
+console.log("With next move:")
 game1.move("down");
 game1.matrix();
 
