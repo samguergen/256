@@ -112,26 +112,15 @@ var Game = function(str){
 
   Game.prototype.testNaN = function(){
     this.game_array.toString();
-    // for (var row = 0; row < 4; row++) {
-      // toString(this.game_array[row]);
-      // console.log(typeof this.game_array[row]);
-        // for (var col = 0; col < 4; col++) {
-          // (this.game_array[col]).toString();
-          // console.log(typeof this.game_array[col]);
-          // var newstr = this.game_array.replace(/NaN/g, 0);
-          // console.log(newstr);
-            // if (isNaN(this.game_array[col])){
-              // this.game_array[col] = 0;
-              // console.log("hello");
-          //   };
-          // };
-
+    for (var row = 0; row < 4; row++) {
+        for (var col = 0; col < 4; col++) {
+            if (isNaN(this.game_array[row][col])){
+              this.game_array[row][col] = 0;
+               };
+            };
+          };
         };
 
-  // Game.prototype.tester = function(){
-  //            newstr = this.game_array.replace(/NaN/g, 0);
-  //         console.log(newstr);
-  //       };
 
   Game.prototype.move = function(direction){
     if (direction == "left"){
@@ -198,12 +187,8 @@ game1.move("right");
 game1.matrix();
 console.log("Move up:")
 game1.move("up");
-game1.matrix();
 game1.testNaN();
-// game1.tester();
+game1.matrix();
 
-//     for (var row = 0; row < 4; row++) {
-// console.log(typeof (this.game_array[row]))
-// };
 
 
