@@ -15,7 +15,6 @@ var _ = _ || require('./underscore.js');
 function transpose(arr,arrLen) {
   for (var i = 0; i < arrLen; i++) {
     for (var j = 0; j <i; j++) {
-      //swap element[i,j] and element[j,i]
       var temp = arr[i][j];
       arr[i][j] = arr[j][i];
       arr[j][i] = temp;
@@ -67,7 +66,6 @@ var Game = function(str){
           this.game_array[row] = squashed;
           };
         };
-          // console.log(this.game_array);
      };
 
 
@@ -93,7 +91,6 @@ var Game = function(str){
             };
           };
         };
-          // console.log(this.game_array);
       };
 
 
@@ -114,38 +111,46 @@ var Game = function(str){
   // }
 
   Game.prototype.testNaN = function(){
-    for (var row = 0; row < 4; row++) {
-        for (var col = 0; col < 4; col++) {
-            if (isNaN(this.game_array[col])){
-              this.game_array[col] = 0
-            };
-          };
+    this.game_array.toString();
+    // for (var row = 0; row < 4; row++) {
+      // toString(this.game_array[row]);
+      // console.log(typeof this.game_array[row]);
+        // for (var col = 0; col < 4; col++) {
+          // (this.game_array[col]).toString();
+          // console.log(typeof this.game_array[col]);
+          // var newstr = this.game_array.replace(/NaN/g, 0);
+          // console.log(newstr);
+            // if (isNaN(this.game_array[col])){
+              // this.game_array[col] = 0;
+              // console.log("hello");
+          //   };
+          // };
+
         };
 
-  };
-
+  Game.prototype.tester = function(){
+             newstr = this.game_array.replace(/NaN/g, 0);
+          console.log(newstr);
+        };
 
   Game.prototype.move = function(direction){
     if (direction == "left"){
       // add spawnBlock here
       this.shift();
       this.merge();
+      this.testNaN();
     }
-
 
     else if (direction == "right"){
       for (var row = 0; row < 4; row++) {
         this.game_array[row].reverse();
         };
-      //remove console log from these
       this.shift();
       this.merge();
 
       for (var row = 0; row < 4; row++) {
         this.game_array[row].reverse();
       };
-      // console.log(this.game_array);
-
     }
 
     else if (direction == "up"){
@@ -162,13 +167,11 @@ var Game = function(str){
         };
       this.shift();
       this.merge();
-
       for (var row = 0; row < 4; row++) {
         this.game_array[row].reverse();
       };
       transpose(this.game_array, 4);
     }
-
     }
 
   };
@@ -189,15 +192,19 @@ game1.matrix();
 // game1.to_s();
 // game1.shift();
 // game1.merge();
-console.log("With move:")
+console.log("Move right:")
 // game1.move("left");
 game1.move("right");
 game1.matrix();
-// game1.move("up");
-// game1.matrix();
-console.log("With next move:")
-game1.move("down");
+console.log("Move up:")
+game1.move("up");
+game1.matrix();
+game1.testNaN();
+game1.tester();
 game1.matrix();
 
+//     for (var row = 0; row < 4; row++) {
+// console.log(typeof (this.game_array[row]))
+// };
 
 
