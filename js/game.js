@@ -128,10 +128,10 @@ var Game = function(str){
 
         };
 
-  Game.prototype.tester = function(){
-             newstr = this.game_array.replace(/NaN/g, 0);
-          console.log(newstr);
-        };
+  // Game.prototype.tester = function(){
+  //            newstr = this.game_array.replace(/NaN/g, 0);
+  //         console.log(newstr);
+  //       };
 
   Game.prototype.move = function(direction){
     if (direction == "left"){
@@ -200,8 +200,7 @@ console.log("Move up:")
 game1.move("up");
 game1.matrix();
 game1.testNaN();
-game1.tester();
-game1.matrix();
+// game1.tester();
 
 //     for (var row = 0; row < 4; row++) {
 // console.log(typeof (this.game_array[row]))
