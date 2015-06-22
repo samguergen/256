@@ -140,6 +140,7 @@ var Game = function(str){
       for (var row = 0; row < 4; row++) {
         this.game_array[row].reverse();
       };
+      this.testNaN();
     }
 
     else if (direction == "up"){
@@ -147,6 +148,7 @@ var Game = function(str){
       this.shift();
       this.merge();
       transpose(this.game_array, 4);
+      this.testNaN();
     }
 
     else if (direction == "down"){
@@ -161,11 +163,10 @@ var Game = function(str){
       };
       transpose(this.game_array, 4);
     }
+    this.testNaN();
     }
 
   };
-
-
 
 
     // else if (direction == "down"){
@@ -187,7 +188,6 @@ game1.move("right");
 game1.matrix();
 console.log("Move up:")
 game1.move("up");
-game1.testNaN();
 game1.matrix();
 
 
