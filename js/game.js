@@ -92,23 +92,18 @@ var Game = function(str){
           };
         };
       };
+  Game.prototype.spawnBlock = function(){
+    x = Math.random() * 4;
+    y = Math.random() * 4;
+    spawn = this.game_array[x][y];
+    if (spawn == 0){
+      spawn = 2;
+    }
+    else{
+      this.spawnBlock();
+    }
 
-
-// to replace NaN with 0
-  // for (var row = 0; row < 4; row++) {
-  //     for (var col = 0; col < 4; col++) {
-  //         if (isNaN(this.game_array[col])){
-  //           this.game_array[col] = 0
-  //         };
-  //       };
-  //     };
-
-
-
-  // Game.prototype.spawnBlock = function(){
-
-
-  // }
+  };
 
   Game.prototype.testNaN = function(){
     this.game_array.toString();
@@ -169,11 +164,6 @@ var Game = function(str){
   };
 
 
-    // else if (direction == "down"){
-
-    // };
-
-
 console.log("New game:")
 game1 = new Game('0402004002022022');
 game1.createBoard();
@@ -186,9 +176,10 @@ console.log("Move right:")
 // game1.move("left");
 game1.move("right");
 game1.matrix();
-console.log("Move up:")
-game1.move("up");
+console.log("Move down:")
+game1.move("down");
 game1.matrix();
-
+game1.move("right");
+game1.matrix();
 
 
