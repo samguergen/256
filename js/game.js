@@ -117,6 +117,22 @@ var Game = function(str){
           };
         };
 
+  Game.prototype.testEnd = function() {
+    freq = 0
+    for (var row = 0; row < 4; row ++){
+      for (var col = 0; col < 4; col++){
+        if (this.game_array[row][col] == 0){
+          freq += 1;
+        };
+      };
+    };
+    if (freq < 1){
+      return "GAME OVER";
+    };
+  };
+
+
+
 
   Game.prototype.move = function(direction){
     if (direction == "left"){
@@ -125,6 +141,7 @@ var Game = function(str){
       this.merge();
       this.testNaN();
       this.spawnBlock();
+      this.testEnd();
     }
 
     else if (direction == "right"){
@@ -133,6 +150,7 @@ var Game = function(str){
         };
       this.shift();
       this.merge();
+      this.testEnd();
 
       for (var row = 0; row < 4; row++) {
         this.game_array[row].reverse();
@@ -148,6 +166,7 @@ var Game = function(str){
       transpose(this.game_array, 4);
       this.testNaN();
       this.spawnBlock();
+      this.testEnd();
     }
 
     else if (direction == "down"){
@@ -164,6 +183,7 @@ var Game = function(str){
     }
     this.testNaN();
     this.spawnBlock();
+    this.testEnd();
     }
 
   };
@@ -185,6 +205,4 @@ game1.move("down");
 game1.matrix();
 // game1.move("right");
 // game1.matrix();
-// console.log("Spawning block...");
-// game1.spawnBlock();
 game1.matrix();
