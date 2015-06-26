@@ -95,7 +95,6 @@ var Game = function(str){
   Game.prototype.spawnBlock = function(){
     x = Math.floor(Math.random() * 4);
     y = Math.floor(Math.random() * 4);
-    // spawn = this.game_array[x][y];
     console.log("x is " + x + ", and y is " + y);
     if (this.game_array[x][y] == 0){
       this.game_array[x][y] = 2;
