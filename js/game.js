@@ -124,6 +124,7 @@ var Game = function(str){
       this.shift();
       this.merge();
       this.testNaN();
+      this.spawnBlock();
     }
 
     else if (direction == "right"){
@@ -137,6 +138,7 @@ var Game = function(str){
         this.game_array[row].reverse();
       };
       this.testNaN();
+      this.spawnBlock();
     }
 
     else if (direction == "up"){
@@ -145,6 +147,7 @@ var Game = function(str){
       this.merge();
       transpose(this.game_array, 4);
       this.testNaN();
+      this.spawnBlock();
     }
 
     else if (direction == "down"){
@@ -160,6 +163,7 @@ var Game = function(str){
       transpose(this.game_array, 4);
     }
     this.testNaN();
+    this.spawnBlock();
     }
 
   };
@@ -173,15 +177,14 @@ game1.matrix();
 // game1.to_s();
 // game1.shift();
 // game1.merge();
-// console.log("Move right:")
-// // game1.move("left");
+console.log("Move right:")
+game1.move("right");
+game1.matrix();
+console.log("Move down:")
+game1.move("down");
+game1.matrix();
 // game1.move("right");
 // game1.matrix();
-// console.log("Move down:")
-// game1.move("down");
-// game1.matrix();
-// game1.move("right");
-// game1.matrix();
-console.log("Spawning block...");
-game1.spawnBlock();
+// console.log("Spawning block...");
+// game1.spawnBlock();
 game1.matrix();
