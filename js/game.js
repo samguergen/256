@@ -35,7 +35,7 @@ var Game = function(str){
       };
       this.game_array.push(row_array);
     };
-    console.log(this.game_array);
+    // console.log(this.game_array);
   };
 
 
@@ -95,17 +95,16 @@ var Game = function(str){
   Game.prototype.spawnBlock = function(){
     x = Math.floor(Math.random() * 4);
     y = Math.floor(Math.random() * 4);
-    spawn = this.game_array[x][y];
-    console.log(x);
-    console.log(y);
-    console.log(spawn);
-    if (spawn == 0){
-      spawn = 2;
+    // spawn = this.game_array[x][y];
+    console.log("x is " + x + ", and y is " + y);
+    if (this.game_array[x][y] == 0){
+      this.game_array[x][y] = 2;
+      console.log(this.game_array[x][y]);
     }
-    // else{
-    //   this.spawnBlock();
-    // }
-    console.log(spawn);
+    else{
+      this.spawnBlock();
+    };
+    return this.game_array;
   };
 
   Game.prototype.testNaN = function(){
