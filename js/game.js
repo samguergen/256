@@ -99,8 +99,7 @@ var Game = function(str){
     rand = choice[Math.floor(Math.random() * choice.length)];
     // console.log("x is " + x + ", and y is " + y);
     if (this.game_array[x][y] == 0){
-      this.game_array[x][y] = 4;
-      // console.log(this.game_array[x][y]);
+      this.game_array[x][y] = rand;
     }
     else{
       this.spawnBlock();
