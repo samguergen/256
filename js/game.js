@@ -129,6 +129,9 @@ var Game = function(str){
     };
     if (freq < 1){
       console.log("GAME OVER");
+    }
+    else {
+      console.log("Game goes on...")
     };
   };
 
@@ -200,6 +203,7 @@ game1.matrix();
 console.log("Move right:")
 game1.move("right");
 game1.matrix();
+game1.testEnd();
 // console.log("Move down:")
 // game1.move("down");
 // game1.matrix();
@@ -210,7 +214,11 @@ game1.matrix();
 // game1.move("right");
 // game1.matrix();
 // game1.matrix();
-game2 = new Game ('2222222222222222');
-game2.createBoard();
-game2.matrix();
-game2.testEnd()
+
+
+
+
+// game2 = new Game ('2222222222222222');
+// game2.createBoard();
+// game2.matrix();
+// game2.testEnd()
