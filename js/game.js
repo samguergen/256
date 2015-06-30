@@ -95,15 +95,17 @@ var Game = function(str){
   Game.prototype.spawnBlock = function(){
     x = Math.floor(Math.random() * 4);
     y = Math.floor(Math.random() * 4);
-    console.log("x is " + x + ", and y is " + y);
+    choice = [2,4];
+    rand = choice[Math.floor(Math.random() * choice.length)];
+    // console.log("x is " + x + ", and y is " + y);
     if (this.game_array[x][y] == 0){
-      this.game_array[x][y] = 2;
-      console.log(this.game_array[x][y]);
+      this.game_array[x][y] = 4;
+      // console.log(this.game_array[x][y]);
     }
     else{
       this.spawnBlock();
     };
-    return this.game_array;
+    // return this.game_array;
   };
 
   Game.prototype.testNaN = function(){
@@ -136,12 +138,11 @@ var Game = function(str){
 
   Game.prototype.move = function(direction){
     if (direction == "left"){
-      // add spawnBlock here
       this.shift();
       this.merge();
       this.testNaN();
       this.spawnBlock();
-      this.testEnd();
+      // this.testEnd();
     }
 
     else if (direction == "right"){
@@ -150,7 +151,7 @@ var Game = function(str){
         };
       this.shift();
       this.merge();
-      this.testEnd();
+      // this.testEnd();
 
       for (var row = 0; row < 4; row++) {
         this.game_array[row].reverse();
@@ -166,7 +167,7 @@ var Game = function(str){
       transpose(this.game_array, 4);
       this.testNaN();
       this.spawnBlock();
-      this.testEnd();
+      // this.testEnd();
     }
 
     else if (direction == "down"){
@@ -183,7 +184,7 @@ var Game = function(str){
     }
     this.testNaN();
     this.spawnBlock();
-    this.testEnd();
+    // this.testEnd();
     }
 
   };
@@ -200,9 +201,14 @@ game1.matrix();
 console.log("Move right:")
 game1.move("right");
 game1.matrix();
-console.log("Move down:")
-game1.move("down");
-game1.matrix();
+// console.log("Move down:")
+// game1.move("down");
+// game1.matrix();
+// game1.move("down");
+// game1.matrix();
+// game1.move("down");
+// game1.matrix();
 // game1.move("right");
 // game1.matrix();
-game1.matrix();
+// game1.matrix();
+console.log(rand);
