@@ -204,9 +204,11 @@ console.log("Move right:")
 game1.move("right");
 game1.matrix();
 game1.testEnd();
-// console.log("Move down:")
-// game1.move("down");
-// game1.matrix();
+console.log("Move down:")
+game1.move("down");
+game1.matrix();
+game1.testEnd();
+
 // game1.move("down");
 // game1.matrix();
 // game1.move("down");
