@@ -128,7 +128,7 @@ var Game = function(str){
       };
     };
     if (freq < 1){
-      return "GAME OVER";
+      console.log("GAME OVER");
     };
   };
 
@@ -210,4 +210,7 @@ game1.matrix();
 // game1.move("right");
 // game1.matrix();
 // game1.matrix();
-console.log(rand);
+game2 = new Game ('2222222222222222');
+game2.createBoard();
+game2.matrix();
+game2.testEnd()
