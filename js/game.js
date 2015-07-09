@@ -153,7 +153,7 @@ var Game = function(str){
         };
       this.shift();
       this.merge();
-      // this.testEnd();
+
 
       for (var row = 0; row < 4; row++) {
         this.game_array[row].reverse();
@@ -169,7 +169,6 @@ var Game = function(str){
       transpose(this.game_array, 4);
       this.testNaN();
       this.spawnBlock();
-      // this.testEnd();
     }
 
     else if (direction == "down"){
@@ -186,7 +185,6 @@ var Game = function(str){
     }
     this.testNaN();
     this.spawnBlock();
-    // this.testEnd();
     }
 
   };
